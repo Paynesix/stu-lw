@@ -12,10 +12,10 @@ public class StaticClassSingleton {
     private StaticClassSingleton() {}
 
     public static StaticClassSingleton getInstance() {
-        return SingleTonHodler.INSTANCE;
+        return SingleTonHolder.INSTANCE;
     }
 
-    private static class SingleTonHodler {
+    private static class SingleTonHolder {
         private static StaticClassSingleton INSTANCE = new StaticClassSingleton();
     }
 }
