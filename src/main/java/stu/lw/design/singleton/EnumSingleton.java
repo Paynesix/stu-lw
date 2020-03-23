@@ -9,7 +9,7 @@ package stu.lw.design.singleton;
  */
 public enum EnumSingleton {
     INSTANCE;
-    private Object obj;
+    private Object obj;//根据需求，可以组合各种对象
     public static EnumSingleton getInstance(){
         return INSTANCE;
     }

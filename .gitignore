@@ -24,6 +24,8 @@ hs_err_pid*
 
 ## maven
 /target/
-
+.idea
+.mvn
 ## idea
+/media/xy/机1/workspace/.idea/
 *.iml
