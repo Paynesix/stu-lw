@@ -32,9 +32,13 @@ public class ObjectCalculationTests {
             object.put(orderField[i], orderValue[i]);
         }
         TradeOrder order = JSONObject.toJavaObject(object, TradeOrder.class);
+        ObjectCalculation checkBeanSize = new ObjectCalculation();
+        System.out.println("list size:1, list sizeOfObject:" + checkBeanSize.sizeOfObject(order));
+        System.out.println("list size:1, list shallowSizeofObject:" + checkBeanSize.shallowSizeofObject(order));
+        System.out.println("list size:1, list humanSizeOfObject:" + checkBeanSize.humanSizeOfObject(order));
         List<TradeOrder> list = new ArrayList<>();
         try {
-            for (int j = 0; j < 5000; j++) {
+            for (int j = 0; j < 5; j++) {
                 TradeOrder temp = new TradeOrder();
                 BeanUtils.copyProperties(temp, order);
                 list.add(temp);
@@ -44,8 +48,9 @@ public class ObjectCalculationTests {
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
-        ObjectCalculation checkBeanSize = new ObjectCalculation();
-        System.out.println("list size:" + list.size() + ", list humanSize:" + checkBeanSize.humanSizeOfObject(list));
+        System.out.println("list size:" + list.size() + ", list sizeOfObject:" + checkBeanSize.sizeOfObject(list));
+        System.out.println("list size:" + list.size() + ", list shallowSizeofObject:" + checkBeanSize.shallowSizeofObject(list));
+        System.out.println("list size:" + list.size() + ", list humanSizeOfObject:" + checkBeanSize.humanSizeOfObject(list));
 //
 //        ObjectBean bean = new ObjectBean();
 //        bean.setName("xy");
